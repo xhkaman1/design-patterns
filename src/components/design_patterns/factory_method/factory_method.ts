@@ -48,7 +48,8 @@ class PersonCreator2 extends PersonCreator{
     }
 }
 
-function FactoryMethodImplementation(){
+function FactoryMethodImplementation(creatorType:number){
+    const creator = creatorType === 0? new PersonCreator1() : new PersonCreator2();
     const creator1:PersonCreator = new PersonCreator1();
     const creator2:PersonCreator = new PersonCreator2();
 

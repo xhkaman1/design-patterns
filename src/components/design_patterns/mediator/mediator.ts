@@ -6,13 +6,6 @@ class AccessMediator implements Mediator{
     person: Person;
     site: Site;
 
-    constructor(_person:Person, _site:Site){
-        this.person = _person;
-        this.person.mediator = this;
-        this.site = _site;
-        this.site.mediator = this;
-    }
-
     notify(sender: Component, message:string) {
         if(sender === this.person && message === "AgeChange"){
             console.log("Person changed age to: " + this.person.age);
@@ -34,6 +27,11 @@ class Component{
 class Person extends Component{
     age:number;
 
+    constructor(_mediator: Mediator){
+        super();
+        super.mediator = _mediator;
+    }
+
     setAge(_age:number){
         this.age = _age;
         this.mediator.notify(this,"AgeChange");
@@ -42,6 +40,11 @@ class Person extends Component{
 
 class Site extends Component{
     access:boolean;
+
+    constructor(_mediator: Mediator){
+        super();
+        super.mediator = _mediator;
+    }
 
     giveAccess(age:number){
         this.access = age >= 18;
@@ -57,12 +60,12 @@ class Site extends Component{
 function MediatorImplementation(){
     console.log("Mediator Implementation")
 
-    const person = new Person();
-    const site = new Site();
-    console.log("Person, Site Created");
-
-    const access = new AccessMediator(person, site);
+    const access = new AccessMediator();
     console.log("Mediator created");
+
+    const person = new Person(access);
+    const site = new Site(access);
+    console.log("Person, Site Created");
 
     person.setAge(15);
     person.setAge(19);

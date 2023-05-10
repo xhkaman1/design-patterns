@@ -40,14 +40,14 @@ class AlbaniaToUSAdapter extends USTime{
 }
 
 function AdapterImplementation(){
-    const AlTime: AlbaniaTime = new AlbaniaTime(10,46);
-    const AlToUSAdapter: AlbaniaToUSAdapter = new AlbaniaToUSAdapter(AlTime);
-    const UsTime: USTime = new USTime(5,46);
+    const alTime: AlbaniaTime = new AlbaniaTime(10,46);
+    const alToUSAdapter: AlbaniaToUSAdapter = new AlbaniaToUSAdapter(alTime);
+    const usTime: USTime = new USTime(5,46);
 
     console.log("Adapter Implementation");
-    console.log("Time in us(USTime class)", UsTime.timeInUSA());
-    console.log("Time in us(AlToUSAdapter class)", AlToUSAdapter.timeInUSA());
-    console.log("This will print true if time in US is the same as the time given from the adapter: ", UsTime.timeInUSA() === AlToUSAdapter.timeInUSA());
+    console.log("Time in us(USTime class)", usTime.timeInUSA());
+    console.log("Time in us(AlToUSAdapter class)", alToUSAdapter.timeInUSA());
+    console.log("This will print true if time in US is the same as the time given from the adapter: ", usTime.timeInUSA() === alToUSAdapter.timeInUSA());
 
 }
 
