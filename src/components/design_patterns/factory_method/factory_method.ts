@@ -49,14 +49,11 @@ class PersonCreator2 extends PersonCreator{
 }
 
 function FactoryMethodImplementation(creatorType:number){
-    const creator = creatorType === 0? new PersonCreator1() : new PersonCreator2();
-    const creator1:PersonCreator = new PersonCreator1();
-    const creator2:PersonCreator = new PersonCreator2();
+    const creator = creatorType === 0 ? new PersonCreator1() : new PersonCreator2();
 
     console.log("Factory method implementation");
 
-    console.log("Person Creator 1's person: ",creator1.introducePerson());
-    console.log("Person Creator 2's person: ",creator2.introducePerson());
+    console.log("Person Creator's person: ",creator.introducePerson());
 }
 
 export {FactoryMethodImplementation};
