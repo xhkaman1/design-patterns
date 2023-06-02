@@ -8,3 +8,6 @@ Below is a list of the implemented design patterns:
 - Adapter
 - Builder
 - Factory Method
+- Command
+
+- Observer

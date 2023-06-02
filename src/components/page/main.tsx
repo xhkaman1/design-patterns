@@ -3,12 +3,14 @@ import AbstractFactory from "../design-patterns/abstract-factory";
 import Adapter from "../design-patterns/adapter";
 import Builder from "../design-patterns/builder";
 import FactoryMethod from "../design-patterns/factory-method";
+import Command from "../design-patterns/command";
 
 const cards = [
   <AbstractFactory />,
   <Adapter />,
   <Builder />,
   <FactoryMethod />,
+  <Command />,
 ];
 
 export default function MainPage() {
@@ -17,10 +19,10 @@ export default function MainPage() {
       <h1>Design Patterns</h1>
       {cards.map((card) => {
         return (
-          <>
-            {card}
+          <div>
+            <span>{card}</span>
             <br />
-          </>
+          </div>
         );
       })}
     </>
