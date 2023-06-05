@@ -1,4 +1,3 @@
-import React from "react";
 import Card from "../card/card";
 
 interface Person {
@@ -8,7 +7,7 @@ interface Person {
 
 class ItalianPerson implements Person {
   name: string;
-  constructor(name) {
+  constructor(name: string) {
     this.name = name;
   }
   sayHello() {
@@ -18,7 +17,7 @@ class ItalianPerson implements Person {
 
 class EnglishPerson implements Person {
   name: string;
-  constructor(name) {
+  constructor(name: string) {
     this.name = name;
   }
   sayHello(): string {

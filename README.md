@@ -9,5 +9,6 @@ Below is a list of the implemented design patterns:
 - Builder
 - Factory Method
 - Command
-
+- Iterator
 - Observer
+- Strategy

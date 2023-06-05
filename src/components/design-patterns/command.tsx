@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Card from "../card/card";
 
 class Invoker {
   command: Command;
+
+  constructor(command: Command) {
+    this.command = command;
+  }
 
   setCommand(command: Command) {
     this.command = command;
@@ -14,8 +18,8 @@ class Invoker {
 }
 
 interface Command {
-  command();
-  execute();
+  command(): any;
+  execute(): any;
 }
 
 class PrintLetter implements Command {
@@ -37,8 +41,7 @@ class PrintNumber implements Command {
 }
 
 function client(command: Command) {
-  const invoker = new Invoker();
-  invoker.setCommand(command);
+  const invoker = new Invoker(command);
   const [isPressed, setIsPressed] = useState(false);
 
   return (

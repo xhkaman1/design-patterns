@@ -1,4 +1,3 @@
-import React from "react";
 import Card from "../card/card";
 
 interface Builder {
@@ -48,7 +47,11 @@ class Product {
 class Director {
   builder: Builder;
 
-  setBuilder(builder) {
+  constructor(builder: Builder) {
+    this.builder = builder;
+  }
+
+  setBuilder(builder: Builder) {
     this.builder = builder;
   }
 
@@ -59,7 +62,7 @@ class Director {
     return this.builder.getProduct();
   }
 
-  buildCustomModel(hasPart1, hasPart2, hasPart3) {
+  buildCustomModel(hasPart1: boolean, hasPart2: boolean, hasPart3: boolean) {
     this.builder.reset();
     if (hasPart1) {
       this.builder.addPart1();
@@ -75,9 +78,8 @@ class Director {
 }
 
 function client() {
-  const director = new Director();
   const firstBuilder = new BuilderClass();
-  director.setBuilder(firstBuilder);
+  const director = new Director(firstBuilder);
   const product12 = director.buildModel12();
   const productCustom = director.buildCustomModel(true, false, true);
 

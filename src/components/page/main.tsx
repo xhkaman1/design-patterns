@@ -4,6 +4,8 @@ import Builder from "../design-patterns/builder";
 import FactoryMethod from "../design-patterns/factory-method";
 import Command from "../design-patterns/command";
 import Iterator from "../design-patterns/iterator";
+import Observer from "../design-patterns/observer";
+import Strategy from "../design-patterns/strategy";
 
 const cards = [
   <AbstractFactory />,
@@ -12,6 +14,8 @@ const cards = [
   <FactoryMethod />,
   <Command />,
   <Iterator />,
+  <Observer />,
+  <Strategy />,
 ];
 
 export default function MainPage() {
